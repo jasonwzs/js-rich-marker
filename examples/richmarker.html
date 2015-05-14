@@ -1,3 +1,4 @@
+<!-- Modified by Jason Wen (zhenshan.wen@gmail.com) -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,15 +38,8 @@
       }
     </style>
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-      var script = '<script src="../src/richmarker';
-      if (document.location.search.indexOf('compiled') !== -1) {
-        script += '-compiled';
-      }
-      script += '.js"><' + '/script>';
-      document.write(script);
-    </script>
+    <script src="http://map.qq.com/api/js?v=2.exp"></script>
+    <script src="../src/richmarker.js"></script>
 
 
     <script>
@@ -55,17 +49,17 @@
       var map, map2;
       var marker, marker2;
       function init() {
-        var mapCenter = new google.maps.LatLng(0, 0);
-        map = new google.maps.Map(document.getElementById('map'), {
+        var mapCenter = new qq.maps.LatLng(0, 0);
+        map = new qq.maps.Map(document.getElementById('map'), {
           zoom: 1,
           center: mapCenter,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: qq.maps.MapTypeId.ROADMAP
         });
 
-        map2 = new google.maps.Map(document.getElementById('map2'), {
+        map2 = new qq.maps.Map(document.getElementById('map2'), {
           zoom: 1,
           center: mapCenter,
-          mapTypeId: google.maps.MapTypeId.TERRAIN
+          mapTypeId: qq.maps.MapTypeId.TERRAIN
         });
 
         marker = new RichMarker({
@@ -82,47 +76,47 @@
 
         marker2 = new RichMarker({
           map: map,
-          position: new google.maps.LatLng(30, 50),
+          position: new qq.maps.LatLng(30, 50),
           draggable: true,
           flat: true,
           anchor: RichMarkerPosition.MIDDLE,
           content: div
         });
 
-        google.maps.event.addListener(marker, 'position_changed', function() {
+        qq.maps.event.addListener(marker, 'position_changed', function() {
           log('Marker position: ' + marker.getPosition());
         });
 
         var count = 1;
-        google.maps.event.addListener(marker, 'click', function() {
+        qq.maps.event.addListener(marker, 'click', function() {
           log('Marker clicked: ' + count++);
         });
 
-        google.maps.event.addDomListener(document.getElementById('set-content'),
+        qq.maps.event.addDomListener(document.getElementById('set-content'),
           'click', function() {
           setMarkerContent();
         });
 
-        google.maps.event.addDomListener(document.getElementById('toggle-map'),
+        qq.maps.event.addDomListener(document.getElementById('toggle-map'),
           'click', function() {
           toggleMap();
         });
 
-        google.maps.event.addDomListener(document.getElementById('toggle-anchor'),
+        qq.maps.event.addDomListener(document.getElementById('toggle-anchor'),
           'click', function() {
           toggleAnchor();
         });
 
-        google.maps.event.addDomListener(document.getElementById('toggle-flat'),
+        qq.maps.event.addDomListener(document.getElementById('toggle-flat'),
           'click', function() {
           toggleFlat();
         });
-        google.maps.event.addDomListener(document.getElementById('toggle-visible'),
+        qq.maps.event.addDomListener(document.getElementById('toggle-visible'),
           'click', function() {
           toggleVisible();
         });
 
-        google.maps.event.addDomListener(document.getElementById('toggle-draggable'),
+        qq.maps.event.addDomListener(document.getElementById('toggle-draggable'),
           'click', function() {
           marker.setDraggable(!marker.getDraggable());
         });
@@ -167,7 +161,7 @@
       }
 
       // Register an event listener to fire when the page finishes loading.
-      google.maps.event.addDomListener(window, 'load', init);
+      qq.maps.event.addDomListener(window, 'load', init);
     </script>
 
     <script>
@@ -183,8 +177,7 @@
     </script>
   </head>
   <body>
-    <h3>Rich Marker v3</h3>
-    <p><a href="?compiled">Compiled</a> or <a href="?">Standard</a> version of the script.</p>
+    <h3>Rich Marker for Tencent Map</h3>
     <div id="map"></div>
     <div id="map2"></div>
     <div id="log"></div>

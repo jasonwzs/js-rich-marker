@@ -1,22 +1,9 @@
-RichMarker – A Google Maps JavaScript API utility library
+RichMarker – A Tencent Maps JavaScript API utility library
 ==============
 
-A library for using arbitrary DOM elements as map markers in the Google Maps JavaScript API v3.
-![Analytics](https://ga-beacon.appspot.com/UA-12846745-20/js-rich-marker/readme?pixel)
+A library for using arbitrary DOM elements as map markers in the Tencent Maps JavaScript API v2.
 
-[Reference documentation](https://googlemaps.github.io/js-rich-marker/reference.html)
-
-Migrated from the [Google Maps JavaScript API utility libraries on Google Code](https://code.google.com/p/google-maps-utility-library-v3/).
-
-## Live Demo
-
-[![RichMarker Screenshot](https://googlemaps.github.io/js-rich-marker/screenshot.jpg)](https://googlemaps.github.io/js-rich-marker/examples/richmarker.html)
-
-[Example page](https://googlemaps.github.io/js-rich-marker/examples/richmarker.html)
-
-## Contributing
-
-Want to contribute? Check out the [contributing guide](CONTRIBUTING.md)!
+Forked from the original [RichMarker - A Google Maps JavaScript API utility library](https://github.com/googlemaps/js-rich-marker/).
 
 ## License
 
